@@ -1,6 +1,5 @@
 package basicDataStructure;
 
-import java.util.Arrays;
 
 public class 실습2_7 {
     public static void main(String[] args) {
