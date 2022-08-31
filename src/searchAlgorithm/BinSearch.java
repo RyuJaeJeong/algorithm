@@ -13,9 +13,23 @@ public class BinSearch {
             if(a[pc] == key) return pc;
             else if(a[pc]>key) pr = pc -1;
             else pl = pc + 1;
-        }while(pl>pr);
+        }while(pl<=pr);
 
         return -1;
+    }
+
+    public static int binSearchX(int[] a, int n, int key){
+        int pl = 0;
+        int pr = n-1;
+        int idx = -1;
+        do{
+            int pc = (pl + pr) / 2;
+            if(a[pc] == key) idx=pc;
+            else if(a[pc]>key) pr = pc -1;
+            else pl = pc + 1;
+        }while(pl<=pr);
+
+        return idx;
     }
 
     public static void main(String[] args) {
