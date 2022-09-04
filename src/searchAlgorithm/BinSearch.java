@@ -37,7 +37,6 @@ public class BinSearch {
         System.out.print("배열의 길이 : ");
         int n = sc.nextInt();
         int[] a = new int[n];
-
         a[0] = sc.nextInt();
         for (int i = 1; i < n; i++) {
             do{
