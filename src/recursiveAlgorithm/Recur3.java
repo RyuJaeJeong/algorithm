@@ -10,57 +10,31 @@ public class Recur3 {
         if (n > 0) {
             recur3(n-1);
             recur3(n-2);
-            System.out.println(n);
+            System.out.print(n+" ");
         }
     }
 
+    //{ "", 1,  1 2, 1 2 1 3, 1 2 1 3 1 2 4}
+
+    /**
+     * recur3를 비재귀화
+     * @param n 입력 받은 숫자
+     */
     static void recur4(int n){
-        IntStack a = new IntStack(10);
-        IntStack b = new IntStack(10);
-        int temp = n;
-        while (true){
-            if(n>0){
-                a.push(--n);
-                continue;
-            }
-
-            if(a.isEmpty() == false){
-                if(a.peak()>0){
-                    System.out.println(a.pop());
-                    continue;
-                }else{
-                    a.pop();
-                    continue;
-                }
-            }
-            break;
-       }
-        n = temp;
-        while (true){
-            if(n>0){
-                b.push(n-=2);
-                continue;
-            }
-
-            if(b.isEmpty() == false ){
-                if(b.peak()>0){
-                    System.out.println(b.pop());
-                    continue;
-                }else{
-                    b.pop();
-                    continue;
-                }
-            }
-            break;
+        String [] str = new String[n+1];
+        str[0] = "";
+        str[1] = "1";
+        for (int i = 2; i <= str.length; i++) {
+            str[i] = str[i-1] + " " + str[i-2]+ " " + + i;
         }
-        System.out.println(temp);
+        System.out.printf("%s", str[n]);
     }
 
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("정수를 입력하세요 : ");
+        System.out.print("정수를 입력하세요 : ");
         int x = sc.nextInt();
-        recur4(x);
+        recur3(x);
     }
 }
