@@ -29,7 +29,7 @@ public class Recur {
         while (true) {
             if(n>0){
                 stack.push(n);
-                n = n -1;
+                n = n - 1;
                 continue;
             }
 
