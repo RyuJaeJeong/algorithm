@@ -60,6 +60,26 @@ public class InsertionSort {
         }
     }
 
+    //단순삽입정렬
+    public static int[] insertionSort3(int[] a, int n){
+        int[] s = new int[n+1];
+
+        for (int i = 1; i < s.length; i++) {
+            s[i] = a[i - 1];
+        }
+
+        for (int i = 2; i < n + 1; i++) {
+            int j;
+            int tmp = s[i];
+            for (j = i; s[j - 1] > tmp; j--) {
+                s[j] = s[j-1];
+            }
+            s[j] = tmp;
+        }
+
+        return Arrays.copyOfRange(s, 1, s.length);
+    }
+
     
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -73,9 +93,9 @@ public class InsertionSort {
             x[i] = sc.nextInt();
         }
 
-        insertionSort2(x, nx);
+        int y[] = insertionSort3(x, nx);
 
         System.out.println("오름차순으로 정렬 했습니다.!");
-        System.out.println(Arrays.toString(x));
+        System.out.println(Arrays.toString(y));
     }
 }
