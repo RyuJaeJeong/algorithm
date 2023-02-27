@@ -1,18 +1,21 @@
-package stackAndQueue;
+package Queue;
 
+/**
+ * 링버퍼를 활용 한 큐
+ */
 public class IntQueue {
 
     //field
-    private int[] que;
-    private int capacity;
-    private int front;
-    private int rear;
-    private int num;
+    private int[] que;      //큐용 배열
+    private int capacity;   //큐의 용량
+    private int front;      //맨 앞의 요소 커서
+    private int rear;       //맨 뒤의 요소 커서 
+    private int num;        //현재 데이터 개수
 
-    //constructor
-    public IntQueue(int maxlen) {
+    //constructor(생성자)
+    public IntQueue(int capacity) {
         num = front = rear = 0;
-        capacity = maxlen;
+        this.capacity = capacity;
         try{
             que = new int[capacity];
         }catch (OutOfMemoryError e){
@@ -55,7 +58,7 @@ public class IntQueue {
 
     public int indexOf(int x){
         for (int i = 0; i < num; i++) {
-            int idx = (i+front) % capacity;
+            int idx = (i+front) % capacity;         //p155
             if(que[idx] == x) return idx;
         }
         return -1;

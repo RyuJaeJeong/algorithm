@@ -1,11 +1,11 @@
-package stackAndQueue;
+package Queue;
 
 public class IntArrayQueue {
 
     //field
-    private int[] que;
-    private int capacity;
-    private int num;
+    private int[] que;      // 큐
+    private int capacity;   // 수용량
+    private int num;        // 포인터
 
     //cons
     public IntArrayQueue(int capacity) {
@@ -14,6 +14,7 @@ public class IntArrayQueue {
         try{
             que = new int[capacity];
         }catch (OutOfMemoryError e){
+            e.printStackTrace();
             this.capacity = 0;
         }
     }
@@ -46,12 +47,12 @@ public class IntArrayQueue {
      * */
     public int pop() throws EmptyIntQueueException{
         if(num <= 0) throw new EmptyIntQueueException();
-        int returnValue = que[0];
-        num--;
+        int returnValue = que[0];       //선입선출 원리에 따라 가장 먼저들어온 요소부터 꺼냄.
         // 뒤에서부터 한칸씩 당김
-        for (int i = 1; i < que.length; i++) {
+        for (int i = 1; i <= num; i++) {
             que[i-1] = que[i];
         }
+        num--;
         return returnValue;
     }
 
@@ -68,7 +69,7 @@ public class IntArrayQueue {
      * */
     public int peakRear() throws EmptyIntQueueException{
         if(num <= 0) throw new EmptyIntQueueException();
-        return que[num];
+        return que[num-1];
     }
 
     /**

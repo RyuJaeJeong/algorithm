@@ -1,4 +1,4 @@
-package stackAndQueue;
+package Queue;
 
 public class Queue<E> {
     //field
