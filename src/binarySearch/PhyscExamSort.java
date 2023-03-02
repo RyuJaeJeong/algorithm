@@ -1,4 +1,4 @@
-package sortingAlgorithm;
+package binarySearch;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -53,13 +53,19 @@ public class PhyscExamSort {
             new PhyscData("황치안", 169, 0.8),
         };
 
-        /* 정렬을 할 배열, 정렬조건  */
+        /* 정렬을 할 배열, 정렬조건  *//*
         Arrays.sort(x, PhyscData.HEIGHT_ORDER);
         System.out.println("■ 신체검사 리스트 ■");
         System.out.println("이름     키     시력");
         System.out.println("------------------");
         for (int i = 0; i < x.length; i++) {
             System.out.printf("%-8s%3d%5.1f\n", x[i].name, x[i].height, x[i].vision);
-        }
+        }*/
+
+        System.out.print("키가 몇 cm인 사람을 찾고있나요?");
+        int height = sc.nextInt();
+        Arrays.sort(x, PhyscData.HEIGHT_ORDER);
+        int idx = Arrays.binarySearch(x, new PhyscData("", height, 0.0), PhyscData.HEIGHT_ORDER);
+        System.out.println(idx);
     }
 }
