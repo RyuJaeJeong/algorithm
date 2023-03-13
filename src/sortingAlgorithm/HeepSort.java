@@ -15,6 +15,7 @@ public class HeepSort {
         int temp = a[idx1];
         a[idx1] = a[idx2];
         a[idx2] = temp;
+
     }
 
     /**

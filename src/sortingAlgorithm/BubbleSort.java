@@ -26,7 +26,6 @@ public class BubbleSort {
         for (int i = 0; i < n-1; i++) {
             for (int j = n-1; j > i; j--) {
                 if(a[j-1] > a[j]){
-                    //바꿔줘라
                     swap(a, j-1, j);
                 }
             }
@@ -44,11 +43,9 @@ public class BubbleSort {
         for (int i = 0; i < nx; i++) {
             System.out.printf("x[%d] : ", i);
             x[i] = sc.nextInt();
-            //System.out.println();
         }
 
         bubbleSort(x, nx);
-
         System.out.println("오름차순으로 정렬 했습니다.!");
         System.out.println(Arrays.toString(x));
 
