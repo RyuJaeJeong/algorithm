@@ -45,15 +45,17 @@ public class Meeting implements Comparator<Meeting> {
 
     @Override
     public int compare(Meeting o1, Meeting o2) {
-        if(o1.getEndTime() > o2.getEndTime()){
+        if(o1.getStartTime() > o2.getStartTime()){
             return 1;
-        }else if(o1.getEndTime() == o2.getEndTime()){
-            if(o1.getStartTime() > o1.getStartTime()){
+        }else if(o1.getStartTime() == o2.getStartTime()){
+            if(o1.getEndTime() > o2.getEndTime()){
                 return 1;
+            }else if(o1.getEndTime() == o2.getEndTime()){
+                return 0;
             }else{
                 return -1;
             }
-        }else if(o1.getEndTime() < o2.getEndTime()){
+        }else if(o1.getStartTime() < o2.getStartTime()){
             return -1;
         }
 
