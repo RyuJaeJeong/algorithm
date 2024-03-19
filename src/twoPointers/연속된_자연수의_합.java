@@ -3,7 +3,6 @@ package twoPointers;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 public class 연속된_자연수의_합 {
 

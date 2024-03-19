@@ -21,6 +21,7 @@ public class 최대_매출 {
         solution(N, K, inputArr);
     }
 
+
     public static void solution(int N, int K, int[] inputArr){
         int front = 0;
         int rear = front + (K-1);

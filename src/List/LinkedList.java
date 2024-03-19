@@ -19,12 +19,18 @@ public class LinkedList<E> {
     private Node<E> crnt; //선택 포인터
 
     // cons
+    //head == null 이면, 비어있는 연결 리스트
+    //head.next == null 이면, 노드가 1개인 연결리스트
+    //head.next.next == null 이면, 노드가 2개인 연결 리스트
     public LinkedList() {
         head = crnt = null;
     }
 
+
+
     /**
      * method
+     * obj 와 ptr을 비교하여, obj와 같은 데이터가 나타나면 리턴
      */
     public E search(E obj, Comparator<? super E> c){
         //ptr을 머릿노드로 초기화
@@ -43,9 +49,10 @@ public class LinkedList<E> {
 
     /**
      * 머리에 노드 삽입
+     * 현재 머리노드를 다음 포인터값에 집어넣고, head와 현재 포인터에 obj를 집어넣음.
      */
     public void addFirst(E obj){
-        Node<E> ptr = head;
+        Node<E> ptr = head;         //다음 node정보에 현재 머릿노드의 참조변수를 대입함.
         head = crnt = new Node<E>(obj, ptr);
     }
 
@@ -157,6 +164,26 @@ public class LinkedList<E> {
         while(ptr != null){
             System.out.println(ptr.data);
             ptr = ptr.next;
+        }
+    }
+
+    /**
+     * 서로 같은 노드를 가장 앞쪽만 남기고 모두 삭제.
+     * @param c
+     */
+    public void purge(Comparator<? super E> c){
+        Node<E> stPtr = head;
+        Node<E> edPtr = head;
+        int cnt = 0;
+        while (stPtr!=null){
+            while (edPtr!=null){
+                edPtr = edPtr.next;
+                if(stPtr.equals(edPtr)&&++cnt>0){
+                    edPtr = edPtr.next;
+                }
+                cnt = 0;
+                stPtr = stPtr.next;
+            }
         }
     }
 

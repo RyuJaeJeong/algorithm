@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class 실습1_1 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        /*Scanner sc = new Scanner(System.in);
         System.out.println("세 정수의 최댓값을 구합니다.");
 
         // 1. 세 수 a b c를 입력 받음
@@ -19,7 +19,9 @@ public class 실습1_1 {
         if(b > max) max = b;
         if(c > max) max = c;
 
-        System.out.println("최댓값은 " + max + "입니다.");
+        System.out.println("최댓값은 " + max + "입니다.");*/
+        System.out.println(3 & 1);
+        System.out.println(3 & 2);
     }
 
 }

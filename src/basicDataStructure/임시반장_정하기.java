@@ -1,6 +1,5 @@
 package basicDataStructure;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class 임시반장_정하기 {
@@ -39,7 +38,6 @@ public class 임시반장_정하기 {
         }
         int max = outputArr[0].length();
         int banjang = 1;
-        System.out.println(Arrays.toString(outputArr));
         for (int i = 1; i < outputArr.length; i++) {
             if(outputArr[i].length() > max){
                 max = outputArr[i].length();

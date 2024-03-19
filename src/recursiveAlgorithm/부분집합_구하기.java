@@ -8,7 +8,7 @@ public class 부분집합_구하기 {
 
     //method
     public static void main(String[] args) {
-        n = 10;
+        n = 100;
         ch = new int[n+1];
         solution(1);
     }

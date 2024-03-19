@@ -1,4 +1,4 @@
-package stackAndQueue;
+package Stack;
 
 // int형 고정 길이 스택
 public class Stack<E> {

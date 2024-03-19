@@ -57,6 +57,7 @@ public class LinkedListTester {
          * @param sw
          */
         public void scanData(String guide, int sw){
+            System.out.println(sw);
             System.out.printf("%s 할 데이터를 입력하세요\n", guide);
 
             if((sw & NO) == NO){

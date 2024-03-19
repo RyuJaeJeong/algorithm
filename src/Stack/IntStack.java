@@ -1,4 +1,4 @@
-package stackAndQueue;
+package Stack;
 
 // int형 고정 길이 스택
 public class IntStack {
@@ -45,7 +45,7 @@ public class IntStack {
      * 스택 꼭대기에 있는 데이터를 꺼냄
      * */
     public int pop() throws EmptyIntStackException{
-        if(ptr<=0) throw new EmptyIntStackException();
+        if(ptr <= 0) throw new EmptyIntStackException();
         return stk[--ptr];
     }
 

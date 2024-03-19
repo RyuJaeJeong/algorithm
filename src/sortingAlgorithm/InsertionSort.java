@@ -62,6 +62,7 @@ public class InsertionSort {
 
     //단순삽입정렬
     public static int[] insertionSort3(int[] a, int n){
+
         int[] s = new int[n+1];
 
         for (int i = 1; i < s.length; i++) {

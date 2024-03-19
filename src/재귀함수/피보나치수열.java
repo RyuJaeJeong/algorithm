@@ -10,10 +10,10 @@ public class 피보나치수열 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int N = Integer.parseInt(sc.nextLine());
-        fibo = new int[N+1];
-        solution3(N);
+        //fibo = new int[N+1];
+
         for (int i = 1; i <= N; i++) {
-            System.out.printf("%d ", fibo[i]);
+            System.out.printf("%d ", solution1(i));
         }
     }
 
